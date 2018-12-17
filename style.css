@@ -32,6 +32,8 @@ nav a{
     background:none;
     background-color: var(--background-dark);
     color:lightcyan;
+    border-style: hidden;
+    border-radius: 10px;
 }
 footer{
     position: absolute;
