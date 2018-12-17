@@ -41,9 +41,6 @@ nav button:hover{
     color: initial;
     border-color: #030048;
     border-style: solid;
-    width: inherit*120%;
-    padding-top: inherit*120%;
-    padding-bottom: inherit*120%;
     transition: 0.5s;
 }
 footer{
