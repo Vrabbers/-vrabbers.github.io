@@ -32,7 +32,8 @@ nav button{
     background:none;
     background-color: var(--background-dark);
     color:lightcyan;
-    border-style: hidden;
+    border-color: var(--background-dark);
+    border-style: solid;
     border-radius: 10px;
     font-size: 16px;
 }
