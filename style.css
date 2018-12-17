@@ -22,18 +22,29 @@ header h1{
     border-style: hidden;
     border-radius: 10px;
 }
-nav a{
-    width:100px;
+nav button{
+    width:auto;
     text-decoration: none;
     color: initial;
     margin-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     background:none;
     background-color: var(--background-dark);
     color:lightcyan;
     border-style: hidden;
     border-radius: 10px;
+    font-size: 16px;
+}
+nav button:hover{
+    background-color: lightblue;
+    color: initial;
+    border-color: #030048;
+    border-style: solid;
+    width: inherit*120%;
+    padding-top: inherit*120%;
+    padding-bottom: inherit*120%;
+    transition: 0.5s;
 }
 footer{
     position: absolute;
