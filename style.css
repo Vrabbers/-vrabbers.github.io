@@ -28,9 +28,11 @@ footer{
     text-align: center;
     background-color: #030048;
     color: lightcyan;
+    margin-top: 10;
 }
 
 footer a{
-    color:aquamarine;
+    color: lightcyan;
+    text-decoration: none;
 }
 /*PS. I really f*****g hate CSS. Like, really*/
