@@ -15,6 +15,46 @@
     font-family:sans-serif, blob-emote;
 }
 
+p{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+header{
+    background-color: var(--dark-bg);
+    color: var(--dark-fg);
+    margin-bottom: 20px;
+    border-radius:10px;
+}
+
+header h1{
+    margin-bottom: 10px;
+    padding-top:15px;
+}
+
+header button{
+    margin-bottom: 15px;
+    background-color: var(--dark-bg);
+    color: var(--dark-fg);
+    border-style: none;
+    border-radius: 10px;
+    padding:10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+header button:hover{
+    background-color: black;
+    transition: 0.2s;
+}
+
+header button:active{
+    background-color: var(--light-bg);
+    color: var(--light-fg);
+    transition: 0.05s;
+
+}
+
 body{
     background-color: var(--light-bg);
     margin-left: 10px;
