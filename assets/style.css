@@ -1,5 +1,5 @@
 @font-face{
-    font-family: blob-emote;
+    font-family: blob-emoji;
     src: url("notocoloremojicompat.ttf");
 }
 
@@ -12,7 +12,7 @@
 }
 
 *{
-    font-family:sans-serif, blob-emote;
+    font-family:sans-serif, blob-emoji;
 }
 
 p{
