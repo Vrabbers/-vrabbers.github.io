@@ -76,3 +76,14 @@ footer{
 footer a{
     color: var(--dark-fg);
 }
+
+/*Page-specific stuff*/
+
+.shwcheat{
+    border-style: solid;
+    border-radius: 10px;
+    float:right;
+    border-width: 2px;
+    padding:10px;
+}
+
