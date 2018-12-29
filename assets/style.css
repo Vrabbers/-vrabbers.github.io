@@ -41,6 +41,7 @@ header button{
     padding:10px;
     margin-left: 0px;
     margin-right: 0px;
+    font-size:initial;
 }
 
 header button:hover{
@@ -85,5 +86,6 @@ footer a{
     float:right;
     border-width: 2px;
     padding:10px;
+    font-size: 0.85em
 }
 
