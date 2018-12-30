@@ -5,8 +5,7 @@ function navButtons(){
 }
 function footer(){
     document.write(` 
-    Made by <a href="https://github.com/Vrabbers">Vrabbers</a>
-    <p>
+    Made by <a href="https://github.com/Vrabbers">Vrabbers</a><p>
     Mostly an experimental sandbox.<p>
     Blob emoji by <a href="https://github.com/C1710/blobmoji">C1710</a>`)
 }
