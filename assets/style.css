@@ -37,7 +37,7 @@ header h1{
     padding-top:15px;
 }
 
-header button{
+button{
     margin-bottom: 15px;
     background-color: var(--dark-bg);
     color: var(--dark-fg);
@@ -49,12 +49,12 @@ header button{
     font-size:initial;
 }
 
-header button:hover{
+button:hover{
     background-color: black;
     transition: 0.2s;
 }
 
-header button:active{
+button:active{
     background-color: var(--light-bg);
     color: var(--light-fg);
     transition: 0.05s;
@@ -89,6 +89,7 @@ input[type=text]{
     border-color:var(--light-fg);
     background-color:whitesmoke;
 }
+
 
 /*Page-specific stuff*/
 

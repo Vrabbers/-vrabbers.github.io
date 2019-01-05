@@ -10,3 +10,7 @@ $(document).ready(()=>{
     }
     console.log(strings)
 });
+
+function startRound(){
+    
+}
