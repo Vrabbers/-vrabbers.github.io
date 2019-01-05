@@ -43,7 +43,7 @@ header button{
     color: var(--dark-fg);
     border-style: none;
     border-radius: 10px;
-    padding:10px;
+    padding: 0.5em 0.5em;
     margin-left: 0px;
     margin-right: 0px;
     font-size:initial;
@@ -107,7 +107,6 @@ input[type=text]{
     border-radius: 10px;
     border-width: 2px;
     padding: 0.5em 0.5em;
-    font-size: 0.85em;
     margin:inherit;
     border-style:solid;
     display:inline-block;
@@ -117,4 +116,10 @@ input[type=text]{
 #bigindicator{
     margin-top:0.5em;
     font-size:1.5em;
+}
+
+#answerbox{
+    width: 50%;
+    font-size: 1em;
+    text-align: center;
 }
