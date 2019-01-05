@@ -83,6 +83,13 @@ footer a{
     color: var(--dark-fg);
 }
 
+input[type=text]{
+    padding: 0.5em 0.5em;
+    border-radius:10px;
+    border-color:var(--light-fg);
+    background-color:whitesmoke;
+}
+
 /*Page-specific stuff*/
 
 .shwcheat{
@@ -95,3 +102,19 @@ footer a{
     background-color:rgb(253, 253, 253);
 }
 
+.shwbox{
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    padding: 0.5em 0.5em;
+    font-size: 0.85em;
+    margin:inherit;
+    border-style:solid;
+    display:inline-block;
+    width:50%;
+}
+
+#bigindicator{
+    margin-top:0.5em;
+    font-size:1.5em;
+}
