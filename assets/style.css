@@ -123,3 +123,11 @@ input[type=text]{
     padding: 0.5em 0.5em;
     text-align: center;
 }
+
+@media only screen and (max-width: 650px) {
+    .shwcheat{
+        float:none;
+        width: 240px;
+        margin: 0 auto
+    }
+}
