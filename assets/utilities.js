@@ -4,3 +4,6 @@ function navButtons(){
     <button onclick="window.location.href='shavian.html'">Shavian</button>
     <button onclick="window.location.href='info.html'">About</button>`)
 }
+function footer(){
+    document.write("&copy; Vrabbers 2018-2019")
+}
