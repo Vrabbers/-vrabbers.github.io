@@ -1,6 +1,6 @@
-var strings;
-var currentString;
-var ready = false;
+let strings;
+let currentString;
+let ready = false;
 
 $.getJSON("https://vrabbers.github.io/assets/shawstrings.json", (json)=>{
     strings=json;
@@ -15,9 +15,9 @@ $(document).ready(()=>{
     });
 });
 
-var checktrue = setInterval(()=>{
+let checkTrue = setInterval(()=>{
     if(ready && typeof strings !== 'undefined'){
-        clearInterval(checktrue);
+        clearInterval(checkTrue);
         startRound();
     }
 }, 20);

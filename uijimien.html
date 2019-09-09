@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="assets/utilities.js"></script>
+    <script src="assets/jquery-3.3.1.min.js"></script>
+
+    <title>Vrabbers</title>
+    <style>
+        body{
+            background-color: red;
+            font-family: serif;
+        }
+        footer{
+            font-family: sans-serif, noto-shavian, blob-emoji;
+        }
+
+    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<header>
+    <h1>Ui Jimi èn <button style="font-family: 'Comic Sans MS',fantasy" onclick="window.location.href='index.html'">Vá para casa</button> </h1>
+</header>
+<body>
+    <textarea id="stuff" disabled="" style="width: 100%; resize: none; height: 100px; background-color: lawngreen; font-family: Webdings; font-size: 20px; color: aqua">asdasdasd</textarea>
+    <textarea id="input" style="resize: none;" onPaste="return Pasted()"></textarea> <div style=""></div>
+    <script>let input = $("#input");
+        function Pasted(){
+            alert("SEM TRAPAÇAS!");
+            input.val('');
+            setTimeout(input.val, 2, "");
+        }</script>
+</body>
+<footer style=""><script>footer()</script></footer>
+</html>
