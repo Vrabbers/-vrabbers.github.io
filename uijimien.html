@@ -4,7 +4,7 @@
     <script src="assets/utilities.js"></script>
     <script src="assets/jquery-3.4.1.min.js"></script>
     <script src="assets/uijimien.js"></script>
-    <title>Vrabbers</title>
+    <title>UI JIM I ÈN</title>
     <style>
         body{
             background-color: red;
@@ -44,6 +44,16 @@
         button.accents{
             font-size: larger;
         }
+
+        #prgOutput{
+            resize: none;
+            height:30em;
+            width: 100%;
+        }
+
+        #prgSendBox{
+            width:70%
+        }
     </style>
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +75,10 @@
             <td><button class="accents" style = "background-color: darkolivegreen" onclick="input.val(input.val()+'Ú')">u´</button></td>
         </tr>
     </table>
-    <textarea id="input" onPaste="return pasted()"></textarea> <div id="timer"></div>
+    <textarea id="input" onPaste="pasted()" onkeypress="if(!countingDown){countingDown = true; timerDec()}"></textarea> <div id="timer">AAAAAAAA</div>
+
+    <textarea id="prgOutput" disabled=""></textarea>
+    <input id="prgSendBox"><button id="buttonSend" onclick="programSend()">MaNdAr</button>
 </body>
 <footer style=""><script>footer()</script></footer>
 </html>
