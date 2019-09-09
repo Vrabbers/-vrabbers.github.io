@@ -18,7 +18,7 @@
             resize: none;
             height: 6em;
             background-color: lawngreen;
-            font-family: Webdings;
+            font-family: Wingdings, Webdings;
             font-size: 30px;
             color: aqua
         }
@@ -40,6 +40,10 @@
             width: 10%;
             display: inline;
         }
+
+        button.accents{
+            font-size: larger;
+        }
     </style>
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,8 +53,19 @@
     <h1>Ui Jimi èn <button style="font-family: 'Comic Sans MS',fantasy" onclick="window.location.href='index.html'">Vá para casa</button> </h1>
 </header>
 <body>
-    <textarea id="code" disabled="" style="">asdasdasd</textarea>
-    <textarea id="input" onPaste="return Pasted()"></textarea> <div id="timer"></div>
+    <textarea id="code" disabled="" style=""></textarea>
+    <table id="accentButtons" style="display: inline">
+        <tr>
+            <td><button class="accents" style = "background-color: darkcyan" onclick="input.val(input.val()+'À')">à</button></td>
+            <td><button style = "background-color: darkgoldenrod" onclick="input.val(input.val()+'É')">é</button></td>
+        </tr>
+        <tr>
+            <td><button class="accents" style = "background-color: darkmagenta" onclick="input.val(input.val()+'Á')">á</button></td>
+            <td><button style = "background-color: darkcyan" onclick="input.val(input.val()+'Ó')">Ò</button></td>
+            <td><button class="accents" style = "background-color: darkolivegreen" onclick="input.val(input.val()+'Ú')">u´</button></td>
+        </tr>
+    </table>
+    <textarea id="input" onPaste="return pasted()"></textarea> <div id="timer"></div>
 </body>
 <footer style=""><script>footer()</script></footer>
 </html>

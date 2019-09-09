@@ -1,17 +1,26 @@
-const input = $("#input");
-const timerElement = $("#timer");
-const codeArea = $("#code");
+let input;
+let timerElement;
+let codeArea;
 let timeToReset = 10;
 let time = 10;
 
-setInterval(()=>{
+
+$(document).ready(()=>{
+    input = $("#input");
+    timerElement = $("#timer");
+    codeArea = $("#code");
+});
+
+
+setTimeout(function timerDec(){
     time -= 1/100;
     if(time <= 0){
         time = timeToReset;
         addToCodeArea();
     }
-    timerElement.val(time); //WHY DOESNT THIS WORKKKKKKKK
-},100);
+    timerElement.text(time.toString(7));
+    setTimeout(timerDec,10)
+},10);
 
 
 function pasted() {
