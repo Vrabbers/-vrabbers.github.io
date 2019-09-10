@@ -17,7 +17,7 @@
 * /(TERMINE ESSE PROGRAMA)|(OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM (CARÁTER|NÚMERO))|(IMPRIMA O (CARÁTER|VALOR) DA VARIÁVEL ABERTA)|(IMPRIMA O CARÁTER COM O VALOR ASCII \d+)|(DECLARE A NOVA VARIÁVEL [A-Z]+)|(ABRA A VARIÁVEL [A-Z]+)|((ATRIBUA|ADICIONE|MULTIPLIQUE|) \d+ À VARIÁVEL ABERTA)|(PULE A [A-Z]+ SE [A-Z]+ É (IGUAL A|MAIOR QUE|MENOR QUE) [A-Z]+)|(DEFINA O RÓTULO [A-Z]+)/
 * should match every line that is fed into the code
  */
-
+const beautifulRegex = /(TERMINE ESSE PROGRAMA)|(OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM (CARÁTER|NÚMERO))|(IMPRIMA O (CARÁTER|VALOR) DA VARIÁVEL ABERTA)|(IMPRIMA O CARÁTER COM O VALOR ASCII \d+)|(DECLARE A NOVA VARIÁVEL [A-Z]+)|(ABRA A VARIÁVEL [A-Z]+)|((ATRIBUA|ADICIONE|MULTIPLIQUE|) \d+ À VARIÁVEL ABERTA)|(PULE A [A-Z]+ SE [A-Z]+ É (IGUAL A|MAIOR QUE|MENOR QUE) [A-Z]+)|(DEFINA O RÓTULO [A-Z]+)/;
 let input;
 let timerElement;
 let codeArea;
@@ -83,5 +83,19 @@ function programSend() {
     //TODO: Do this when the interpreter works
 }
 
-function addToCodeArea(){} //TODO: Actually do this
+function addToCodeArea(){
+    let strings = input.val().split('\n');
+    if(input.val() === ""){
+       startInterpreting();
+    }else if(strings[0].match(beautifulRegex) !== null){
+        codeArea.val(codeArea.val() + strings.shift() + "\n");
+    }else{
+        timeToReset /= 2;
+        alert("ESTUPIDO APRENDA A PROGRAMAR!!1!!!!");
+        strings.shift();
+    }
+    input.val(strings.join("\n"))
+}
 
+
+function startInterpreting(){}
