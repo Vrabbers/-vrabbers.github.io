@@ -1,3 +1,4 @@
+'use strict';
 /*
 * Ui jimi én commands:
 * TERMINE ESSE PROGRAMA
@@ -17,7 +18,10 @@
 * /(TERMINE ESSE PROGRAMA)|(OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM (CARÁTER|NÚMERO))|(IMPRIMA O (CARÁTER|VALOR) DA VARIÁVEL ABERTA)|(IMPRIMA O CARÁTER COM O VALOR ASCII \d+)|(DECLARE A NOVA VARIÁVEL [A-Z]+)|(ABRA A VARIÁVEL [A-Z]+)|((ATRIBUA|ADICIONE|MULTIPLIQUE|) \d+ À VARIÁVEL ABERTA)|(PULE A [A-Z]+ SE [A-Z]+ É (IGUAL A|MAIOR QUE|MENOR QUE) [A-Z]+)|(DEFINA O RÓTULO [A-Z]+)/
 * should match every line that is fed into the code
  */
+
+const INPUT_MODES = {NO: 0, NUMBER: 1, CHAR: 2};
 const beautifulRegex = /(TERMINE ESSE PROGRAMA)|(OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM (CARÁTER|NÚMERO))|(IMPRIMA O (CARÁTER|VALOR) DA VARIÁVEL ABERTA)|(IMPRIMA O CARÁTER COM O VALOR ASCII \d+)|(DECLARE A NOVA VARIÁVEL [A-Z]+)|(ABRA A VARIÁVEL [A-Z]+)|((ATRIBUA|ADICIONE|MULTIPLIQUE|) \d+ À VARIÁVEL ABERTA)|(PULE A [A-Z]+ SE [A-Z]+ É (IGUAL A|MAIOR QUE|MENOR QUE) [A-Z]+)|(DEFINA O RÓTULO [A-Z]+)/;
+
 let input;
 let timerElement;
 let codeArea;
@@ -27,7 +31,10 @@ let sendButton;
 let countingDown = false;
 let timeToReset = 10;
 let timer = 10;
-let editing = true;
+
+let inputting = INPUT_MODES.NO;
+
+
 
 $(document).ready(()=>{
     input = $("#input");
@@ -79,10 +86,6 @@ function pasted() {
     });
 }
 
-function programSend() {
-    //TODO: Do this when the interpreter works
-}
-
 function addToCodeArea(){
     let strings = input.val().split('\n');
     if(input.val() === ""){
@@ -97,5 +100,44 @@ function addToCodeArea(){
     input.val(strings.join("\n"))
 }
 
+// Interpreter starts here
 
-function startInterpreting(){}
+
+
+
+function interpret(codeString){
+    hideCode();
+    countingDown = false;
+    let code = codeString.split("\n");
+    let variables = [];
+    let counter = 0;
+    let openVar;
+    while(true){
+        if(code[counter] === "TERMINE ESSE PROGRAMA"){
+            break;
+        } else if(code[counter].startsWith("IMPRIMA O CARÁTER COM O VALOR ASCII ")){
+            programOutput.val(programOutput.val() + String.fromCharCode(parseInt(code[counter].substr(36))));
+        }
+        if(++counter === code.length){
+            break;
+        }
+    }
+    alert("O PROGRAMA TERMINOU");
+    timer = 10;
+    timeToReset = 10;
+    input.val("");
+    codeArea.val("");
+    programOutput.val("");
+    userInputBox.val("");
+    hideProgram();
+}
+
+function programSend() {
+    if(inputting === INPUT_MODES.NO){
+        alert("Não RECEVEnEDO ENTRASDADASDA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11");
+    } else if (inputting === INPUT_MODES.NUMBER){
+        return parseInt(userInputBox.val())
+    } else if (inputting === INPUT_MODES.CHAR){
+        return userInputBox.val().substr(0,1);
+    }
+}
