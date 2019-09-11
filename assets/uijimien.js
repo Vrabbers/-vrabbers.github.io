@@ -102,42 +102,71 @@ function addToCodeArea(){
 
 // Interpreter starts here
 
-
-
+let waiting;
+let variables = [];
+let openVar;
+let counter = 0;
 
 function interpret(codeString){
+    programOutput.val("");
+    userInputBox.val("");
     hideCode();
     countingDown = false;
     let code = codeString.split("\n");
-    let variables = [];
-    let counter = 0;
-    let openVar;
-    while(true){
+
+
+
+    let splitCurrent;
+    function r(){
+        sendButton.off("click");
+        splitCurrent = code[counter].split(/(\s+)/);
         if(code[counter] === "TERMINE ESSE PROGRAMA"){
-            break;
+            finish();
+
+        } else if(code[counter] === "OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM NÚMERO") {
+            inputting = INPUT_MODES.NUMBER;
+            userInputBox.focus();
+            sendButton.click(()=>{variables[openVar] = parseInt(userInputBox.val()); r()})
+            return;
+
         } else if(code[counter].startsWith("IMPRIMA O CARÁTER COM O VALOR ASCII ")){
             programOutput.val(programOutput.val() + String.fromCharCode(parseInt(code[counter].substr(36))));
+
+        } else if(code[counter].startsWith("DECLARE A VARIÁVEL ")) {
+            variables[code[counter].substr(19)] = 0;
+
+        } else if(code[counter].startsWith("ABRA A VARIÁVEL ")){
+            let name = code[counter].substr(16);
+            if(variables[name] === undefined){
+                alert(`VARIÁleb ${name} NAO pODE SER ABERTA POIS NAO EXSITe`);
+                finish();
+            }else{
+                openVar = name;
+            }
         }
         if(++counter === code.length){
-            break;
+            finish();
         }
+        r();
     }
+    r();
+
+}
+function finish() {
     alert("O PROGRAMA TERMINOU");
     timer = 10;
     timeToReset = 10;
     input.val("");
     codeArea.val("");
-    programOutput.val("");
-    userInputBox.val("");
-    hideProgram();
+    //hideProgram();
 }
-
-function programSend() {
+/*function programSend() {
     if(inputting === INPUT_MODES.NO){
         alert("Não RECEVEnEDO ENTRASDADASDA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11");
     } else if (inputting === INPUT_MODES.NUMBER){
-        return parseInt(userInputBox.val())
+        inputted
     } else if (inputting === INPUT_MODES.CHAR){
-        return userInputBox.val().substr(0,1);
+        inputted = userInputBox.val().substr(0,1).charCodeAt(0);
     }
-}
+}*/
+
