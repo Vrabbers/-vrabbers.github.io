@@ -89,7 +89,7 @@ function pasted() {
 function addToCodeArea(){
     let strings = input.val().split('\n');
     if(input.val() === ""){
-       startInterpreting();
+        startInterpreting();
     }else if(strings[0].match(beautifulRegex) !== null){
         codeArea.val(codeArea.val() + strings.shift() + "\n");
     }else{
@@ -108,6 +108,7 @@ let openVar;
 let counter = 0;
 
 function interpret(codeString){
+    console.log("r")
     programOutput.val("");
     userInputBox.val("");
     hideCode();
@@ -118,6 +119,8 @@ function interpret(codeString){
 
     let splitCurrent;
     function r(){
+        console.log("r");
+
         sendButton.off("click");
         splitCurrent = code[counter].split(/(\s+)/);
         if(code[counter] === "TERMINE ESSE PROGRAMA"){
@@ -126,7 +129,7 @@ function interpret(codeString){
         } else if(code[counter] === "OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM NÚMERO") {
             inputting = INPUT_MODES.NUMBER;
             userInputBox.focus();
-            sendButton.click(()=>{variables[openVar] = parseInt(userInputBox.val()); r()})
+            sendButton.click(()=>{variables[openVar] = parseInt(userInputBox.val()); console.log("a"); counter++; r()})
             return;
 
         } else if(code[counter].startsWith("IMPRIMA O CARÁTER COM O VALOR ASCII ")){
