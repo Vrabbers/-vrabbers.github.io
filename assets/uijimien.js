@@ -1,14 +1,14 @@
 'use strict';
 /*
 * Ui jimi én commands:
-* TERMINE ESSE PROGRAMA
-* OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM CARÁTER
-* OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM NÚMERO
-* IMPRIMA O CARÁTER DA VARIÁVEL ABERTA
-* IMPRIMA O VALOR DA VARIÁVEL ABERTA
-* IMPRIMA O CARÁTER COM O VALOR ASCII [n]
-* DECLARE A NOVA VARIÁVEL [v]
-* ABRA A VARIÁVEL [v]
+* TERMINE ESSE PROGRAMA *
+* OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM CARÁTER *
+* OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM NÚMERO *
+* IMPRIMA O CARÁTER DA VARIÁVEL ABERTA *
+* IMPRIMA O VALOR DA VARIÁVEL ABERTA *
+* IMPRIMA O CARÁTER COM O VALOR ASCII [n] *
+* DECLARE A NOVA VARIÁVEL [v] *
+* ABRA A VARIÁVEL [v] *
 * ATRIBUA [n] À VARIÁVEL ABERTA
 * ADICIONE ""
 * MULTIPLIQUE ""
@@ -114,41 +114,74 @@ function interpret(codeString){
     hideCode();
     countingDown = false;
     let code = codeString.split("\n");
-
+    counter = 0;
 
 
     let splitCurrent;
     function r(){
-        console.log("r");
+        try {
+            console.log("r");
+            sendButton.off("click");
 
-        sendButton.off("click");
-        splitCurrent = code[counter].split(/(\s+)/);
-        if(code[counter] === "TERMINE ESSE PROGRAMA"){
-            finish();
+            while (true) {
+                splitCurrent = code[counter].split(/(\s+)/);
+                if (counter >= code.length) {
+                    finish();
+                    return;
+                }
+                if (code[counter] === "TERMINE ESSE PROGRAMA") {
+                    finish();
+                    return;
 
-        } else if(code[counter] === "OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM NÚMERO") {
-            inputting = INPUT_MODES.NUMBER;
-            userInputBox.focus();
-            sendButton.click(()=>{variables[openVar] = parseInt(userInputBox.val()); console.log("a"); counter++; r()})
-            return;
+                } else if (code[counter] === "OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM NÚMERO") {
+                    inputting = INPUT_MODES.NUMBER;
+                    userInputBox.focus();
+                    sendButton.click(() => {
+                        variables[openVar] = parseInt(userInputBox.val());
+                        console.log("a");
+                        counter++;
+                        r();
+                    });
+                    return;
 
-        } else if(code[counter].startsWith("IMPRIMA O CARÁTER COM O VALOR ASCII ")){
-            programOutput.val(programOutput.val() + String.fromCharCode(parseInt(code[counter].substr(36))));
+                } else if (code[counter] === "OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM CARÁTER") {
+                    inputting = INPUT_MODES.CHAR;
+                    userInputBox.focus();
+                    sendButton.click(() => {
+                        variables[openVar] = userInputBox.val().charCodeAt(0);
+                        console.log("c");
+                        counter++;
+                        r();
+                    });
+                    return;
 
-        } else if(code[counter].startsWith("DECLARE A VARIÁVEL ")) {
-            variables[code[counter].substr(19)] = 0;
+                } else if (code[counter] === "IMPRIMA O CARÁTER DA VARIÁVEL ABERTA") {
+                    programOutput.val(programOutput.val() + String.fromCharCode(variables[openVar]));
 
-        } else if(code[counter].startsWith("ABRA A VARIÁVEL ")){
-            let name = code[counter].substr(16);
-            if(variables[name] === undefined){
-                alert(`VARIÁleb ${name} NAO pODE SER ABERTA POIS NAO EXSITe`);
-                finish();
-            }else{
-                openVar = name;
+                } else if (code[counter] === "IMPRIMA O VALOR DA VARIÁVEL ABERTA") {
+                    programOutput.val(programOutput.val() + variables[openVar].toString());
+
+                } else if (code[counter].startsWith("IMPRIMA O CARÁTER COM O VALOR ASCII ")) {
+                    programOutput.val(programOutput.val() + String.fromCharCode(parseInt(code[counter].substr(36))));
+
+                } else if (code[counter].startsWith("DECLARE A VARIÁVEL ")) {
+                    variables[code[counter].substr(19)] = 0;
+
+                } else if (code[counter].startsWith("ABRA A VARIÁVEL ")) {
+                    let name = code[counter].substr(16);
+                    if (variables[name] === undefined) {
+                        alert(`VARIÁleb ${name} NAO pODE SER ABERTA POIS NAO EXSITe`);
+                        finish();
+                        return;
+                    } else {
+                        openVar = name;
+                    }
+                }
+                counter++;
             }
-        }
-        if(++counter === code.length){
+        } catch (e){
             finish();
+            return;
         }
         r();
     }
