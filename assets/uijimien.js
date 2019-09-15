@@ -12,8 +12,8 @@
 * ATRIBUA [n] À VARIÁVEL ABERTA *
 * ADICIONE "" *
 * MULTIPLIQUE "" *
-* PULE A [l] SE [v] É (IGUAL A/MAIOR QUE/MENOR QUE) [v]
-* DEFINA O RÓTULO [l]
+* PULE A [l] SE [v] É (IGUAL A/MAIOR QUE/MENOR QUE) [v] *
+* DEFINA O RÓTULO [l] *
 * this beautiful regex
 * /(TERMINE ESSE PROGRAMA)|(OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM (CARÁTER|NÚMERO))|(IMPRIMA O (CARÁTER|VALOR) DA VARIÁVEL ABERTA)|(IMPRIMA O CARÁTER COM O VALOR ASCII \d+)|(DECLARE A NOVA VARIÁVEL [A-Z]+)|(ABRA A VARIÁVEL [A-Z]+)|((ATRIBUA|ADICIONE|MULTIPLIQUE|) \d+ À VARIÁVEL ABERTA)|(PULE A [A-Z]+ SE [A-Z]+ É (IGUAL A|MAIOR QUE|MENOR QUE) [A-Z]+)|(DEFINA O RÓTULO [A-Z]+)/
 * should match every line that is fed into the code
@@ -89,7 +89,7 @@ function pasted() {
 function addToCodeArea(){
     let strings = input.val().split('\n');
     if(input.val() === ""){
-        startInterpreting();
+        interpret(codeArea.val());
     }else if(strings[0].match(beautifulRegex) !== null){
         codeArea.val(codeArea.val() + strings.shift() + "\n");
     }else{
@@ -106,17 +106,19 @@ let waiting;
 let variables = [];
 let openVar;
 let counter = 0;
+let labels = [];
 
 function interpret(codeString){
-    console.log("r")
+    console.log("r");
     programOutput.val("");
     userInputBox.val("");
     hideCode();
     countingDown = false;
+    variables = [];
+    openVar = "";
+    labels = [];
     let code = codeString.split("\n");
     counter = 0;
-
-
     let splitCurrent;
     function r(){
         try {
@@ -188,6 +190,28 @@ function interpret(codeString){
                     } else {
                         openVar = name;
                     }
+                } else if (code[counter].startsWith("DEFINA O RÓTULO ")){
+                    let name = code[counter].substr(16);
+                    labels[name] = counter;
+                } else if (code[counter].startsWith("PULE A ") && splitCurrent[3] === "SE" && splitCurrent[5] === "É"){
+                    //PULE A [l] SE [v] É (IGUAL A/MAIOR QUE/MENOR QUE) [v]
+                    let label = labels[splitCurrent[2]];
+                    let firstVar = variables[splitCurrent[4]];
+                    let secVar = variables[splitCurrent[9]];
+                    if(label === undefined || firstVar === undefined || secVar === undefined){
+                        alert("NAO EXISTIR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        finish();
+                        return;
+                    }
+                    if(splitCurrent[8] === "QUE"){
+                        if(splitCurrent[7] === "MAIOR"){
+                            counter = (firstVar > secVar ? label : counter);
+                        } else if (splitCurrent[7] === "MENOR"){
+                            counter = (firstVar < secVar ? label : counter);
+                        }
+                    } else if (splitCurrent[7] === "IGUAL" && splitCurrent[8] === "A"){
+                        counter = (firstVar === secVar ? label : counter);
+                    }
                 }
                 counter++;
             }
@@ -206,7 +230,7 @@ function finish() {
     timeToReset = 10;
     input.val("");
     codeArea.val("");
-    //hideProgram();
+    hideProgram();
 }
 /*function programSend() {
     if(inputting === INPUT_MODES.NO){
