@@ -9,9 +9,9 @@
 * IMPRIMA O CARÁTER COM O VALOR ASCII [n] *
 * DECLARE A NOVA VARIÁVEL [v] *
 * ABRA A VARIÁVEL [v] *
-* ATRIBUA [n] À VARIÁVEL ABERTA
-* ADICIONE ""
-* MULTIPLIQUE ""
+* ATRIBUA [n] À VARIÁVEL ABERTA *
+* ADICIONE "" *
+* MULTIPLIQUE "" *
 * PULE A [l] SE [v] É (IGUAL A/MAIOR QUE/MENOR QUE) [v]
 * DEFINA O RÓTULO [l]
 * this beautiful regex
@@ -144,7 +144,19 @@ function interpret(codeString){
                     });
                     return;
 
-                } else if (code[counter] === "OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM CARÁTER") {
+                } else if(code[counter].endsWith(" À VARIÁVEL ABERTA")){
+                    let val = parseInt(splitCurrent[1]);
+                    switch(splitCurrent[0]){
+                        case "ATRIBUA":
+                            variables[openVar] = val;
+                            break;
+                        case "ADICIONE":
+                            variables[openVar] += val;
+                            break;
+                        case "MULTIPLIQUE":
+                            variables[openVar] *= val;
+                    }
+                }else if (code[counter] === "OBTENHA ENTRADA E GUARDE NA VARIÁVEL ABERTA COMO UM CARÁTER") {
                     inputting = INPUT_MODES.CHAR;
                     userInputBox.focus();
                     sendButton.click(() => {
