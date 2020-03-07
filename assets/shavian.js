@@ -30,14 +30,16 @@ let checkTrue = setInterval(()=>{
 function goButton(){
     let inputstring = $('#answerbox').val();
     $('#answerbox').val('');
-    if(inputstring.toLowerCase() == currentString.trsled){
+    if(inputstring.toLowerCase() === currentString.trsled){
         $('#bigindicator').text("Correct :)");
-        $('#bigindicator').css('color', 'green');
+        $('#alertbox').removeClass("alert-danger");
+        $('#alertbox').addClass("alert-success");
         $('#youtyped').text('');
         $('#rightanswer').text('');
     }else{
         $('#bigindicator').text("Wrong :(");
-        $('#bigindicator').css('color', 'red');
+        $('#alertbox').removeClass("alert-success");
+        $('#alertbox').addClass("alert-danger");
         $('#youtyped').text(`You typed: ${inputstring}`);
         $('#rightanswer').text(`Correct: ${currentString.trsled}`);   
     };

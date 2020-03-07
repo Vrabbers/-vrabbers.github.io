@@ -1,12 +1,3 @@
-@font-face{
-    font-family: blob-emoji;
-    src: url("notocoloremojicompat.ttf");
-}
-
-@font-face{
-    font-family: noto-shavian;
-    src: url("notosansshavian.ttf");
-}
 
 :root{
     --dark-bg: #202020;
@@ -17,7 +8,7 @@
 }
 
 *{
-    font-family:sans-serif, noto-shavian, blob-emoji;
+    font-family:sans-serif;
     font-weight:normal;
     
 }

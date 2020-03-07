@@ -1,156 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="assets/utilities.js"></script>
-        <script src="assets/jquery-3.4.1.min.js"></script>
-        <title>Vrabbers</title>
-        <link rel="stylesheet" href="assets/style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="assets/shawstrings.json"></script>
-        <script src="assets/shavian.js"></script>
-    </head>
-    <header>
-        <h1>Vrabbers</h1>
-        <script>navButtons()</script>
-    </header>
-    <body>
-        <div class="shwcheat" >
-            <span style="font-weight:bold">Cheatsheet</span>
-            <table style="margin: 0 auto">
-                <tr>
-                    <td>𐑐</td>
-                    <td>𐑚</td>
-                    <td>𐑑</td>
-                    <td>𐑛</td>
-                    <td>𐑒</td>
-                    <td>𐑜</td>
-                    <td>𐑓</td>
-                    <td>𐑝</td>
-                    <td>𐑔</td>
-                    <td>𐑞</td>
-                </tr>
-                <tr>
-                    <td>/p/</td>
-                    <td>/b/</td>
-                    <td>/t/</td>
-                    <td>/d/</td>
-                    <td>/k/</td>
-                    <td>/ɡ/</td>
-                    <td>/f/</td>
-                    <td>/v/</td>
-                    <td>/θ/</td>
-                    <td>/ð/</td>                    
-                </tr>
+<head>
+    <script src="assets/utilities.js"></script>
+    <script src="assets/jquery-3.4.1.min.js"></script>
+    <title>Vrabbers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="assets/shawstrings.json"></script>
+    <script src="assets/shavian.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body class="container-flex text-center  bg-white h-100 pb-10">
 
-                <tr>
-                    <td>𐑕</td>
-                    <td>𐑟</td>
-                    <td>𐑖</td>
-                    <td>𐑠</td>
-                    <td>𐑗</td>
-                    <td>𐑡</td>
-                    <td>𐑘</td>
-                    <td>𐑢</td>
-                    <td>𐑙</td>
-                    <td>𐑣</td>
-                </tr>          
-                <tr>
-                    <td>/s/</td>
-                    <td>/z/</td>
-                    <td>/ʃ/</td>
-                    <td>/ʒ/</td>
-                    <td>/tʃ/</td>
-                    <td>/dʒ/</td>
-                    <td>/j/</td>
-                    <td>/w/</td>
-                    <td>/ŋ/</td>
-                    <td>/h/</td>
-                </tr>     
-                <tr>
-                    <td>𐑤</td>
-                    <td>𐑮</td>
-                    <td>𐑥</td>
-                    <td>𐑯</td>
-                    <td>𐑦</td>
-                    <td>𐑰</td>
-                    <td>𐑧</td>
-                    <td>𐑱</td>
-                    <td>𐑨</td>
-                    <td>𐑲</td>
-                </tr>
-                <tr>
-                    <td>/l/</td>
-                    <td>/r/</td>
-                    <td>/m/</td>
-                    <td>/n/</td>
-                    <td>/ɪ/</td>
-                    <td>/iː/</td>
-                    <td>/ɛ/</td>
-                    <td>/eɪ/</td>
-                    <td>/æ/</td>
-                    <td>/aɪ/</td>
-                </tr>
-                <tr>
-                    <td>𐑩</td>
-                    <td>𐑳</td>
-                    <td>𐑪</td>
-                    <td>𐑴</td>
-                    <td>𐑫</td>
-                    <td>𐑵</td>
-                    <td>𐑬</td>
-                    <td>𐑶</td>
-                    <td>𐑭</td>
-                    <td>𐑷</td>
-                </tr>
-                <tr>
-                    <td>/ə/</td>
-                    <td>/ʌ/</td>
-                    <td>/ɒ/</td>
-                    <td>/oʊ/</td>
-                    <td>/ʊ/</td>
-                    <td>/uː/</td>
-                    <td>/aʊ/</td>
-                    <td>/ɔɪ/</td>
-                    <td>/ɑː/</td>
-                    <td>/ɔː/</td>
-                </tr>
-            </table>
-            <table style="margin: 0 auto">
-                <tr>
-                    <td>𐑸</td>
-                    <td>𐑹</td>
-                    <td>𐑺</td>
-                    <td>𐑻</td>
-                    <td>𐑼</td>
-                    <td>𐑽</td>
-                    <td>𐑾</td>
-                    <td>𐑿</td>
-                </tr>
-                <tr>
-                    <td>/ɑːr/</td>
-                    <td>/ɔːr/</td>
-                    <td>/ɛər/</td>
-                    <td>/ɜːr/</td>
-                    <td>/ər/</td>
-                    <td>/ɪər/</td>
-                    <td>/i.ə/</td>
-                    <td>/juː/</td>
-                </tr>
-            </table>
-            the = 𐑞&emsp;to = 𐑑&emsp;of = 𐑝<br> 
-            for = 𐑓&emsp;and = 𐑯
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+    <a class="navbar-brand" href="index.html">
+        <img src="assets/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+        Vrabbers
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="shavian.html">
+                Shavian
+            </a>
+            <a class="nav-item nav-link active" href="https://github.com/Vrabbers">
+                GitHub
+            </a>
+            <a class="nav-item nav-link active text-white-50" href="uijimien.html">
+                Ui jimi én
+            </a>
         </div>
-        <h2>Learn&nbsp;Shavian</h2>
-        <div id="shwbox"></div>
-        <input type="text" id="answerbox">
-        <button style="font-size:1em" onclick="goButton()" id="#gobutton">Go</button>
-        <div id="bigindicator"></div>
-        <div id="youtyped"></div>
-        <div id="rightanswer"></div>
-        <div style="font-size:0.7em">Not case-sensitive, numbers are spelled out (thirty three, not 33)</div>
-    </body>
-    <footer><script>footer()</script></footer>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Learn&nbsp;Shavian</h2>
+            <div id="shwbox" class="alert alert-dark p-2"></div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control p-2" placeholder="Your answer" aria-label="Your answer" id="answerbox">
+                <div class="input-group-append">
+                    <button class="btn btn-dark" type="button" onclick="goButton()" id="gobutton">Go!</button>
+                </div>
+            </div>
+            <div class="alert" id="alertbox">
+            <h4 class="alert-heading m-0" id="bigindicator"></h4>
+            <div id="youtyped"></div>
+            <div id="rightanswer"></div>
+            </div>
+            <div style="font-size:0.7em">Not case-sensitive, numbers are spelled out (thirty three, not 33)</div>
+        </div>
+        <div class="row ml-4">
+            <img src="assets/shawcheatsheet.png" height="300" alt="">
+        </div>
+    </div>
+</div>
+<footer class="card-footer fixed-bottom  static-bottom">
+    <div class="inner">
+        Shavian-English strings by Alexolas - <script>footer()</script>
+    </div>
+</footer>
+</body>
+
 
 </html>
