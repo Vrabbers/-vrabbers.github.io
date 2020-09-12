@@ -13,6 +13,11 @@ $(document).ready(()=>{
             goButton(); 
         }
     });
+    $("#input").keyup((event)=>{
+        if(event.keyCode === 13){
+            translateButton(); 
+        }
+    });
 });
 
 let checkTrue = setInterval(()=>{
@@ -105,12 +110,6 @@ let translateTable = [
     ["𐑿", "ju"],
 ]
 
-function translateButton(){
-    let inp = $("#inputbox").val();
-    let out = translate(inp);
-    $("#outbox").text(out);
-}
-
 function translate(input){
     let out = input;
     translateTable.forEach(element => {
@@ -118,4 +117,12 @@ function translate(input){
     });
     return out;
 }
+
+
+function translateButton(){
+    let inp = $("#inputbox").val();
+    let out = translate(inp);
+    $("#outbox").text(out);
+}
+
 
