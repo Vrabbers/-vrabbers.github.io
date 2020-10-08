@@ -1,0 +1,145 @@
+@font-face {
+    font-family: Contemporary;
+    src: url(Contemporary-Regular.ttf);
+}
+
+* {
+    font-family: Contemporary, sans-serif;
+}
+
+:root {
+    --white: #f0ece2;
+    --black: #101010;
+    --color: #69779b;
+}
+
+.sidebar {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.main {
+    margin-left: 292px;
+    padding: 20px 45px;
+    width: 40%;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.sidebar {
+    background-color: var(--black);
+    width: 292px;
+}
+
+.sidebarhead {
+    padding: 20px;
+    background-color: var(--color);
+}
+
+.sidebarhead a {
+    text-decoration: none;
+    
+}
+
+.sidebarhead h1 {
+    color: var(--white);
+    text-align: center;
+    margin: 0px;
+    margin-top: 0.5em;
+    text-decoration: none;
+}
+
+.toc {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 30px 30px 30px;
+}
+
+h1 {
+    color: var(--black);
+    border-left: solid 5px var(--color);
+    padding: 6px 18px;
+    font-size: 24px;
+    margin: 40px 10px 10px 10px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+* {
+    font-size: 20px;
+    font-weight: Normal;
+    text-align: justify;
+}
+
+b {
+    color: var(--color);
+}
+
+a.tocl {
+    color: var(--color);
+    text-decoration: none;
+}
+
+a.tocl:hover {
+    color: var(--white);
+}
+
+table {
+    background-color: var(--black);
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+td {
+    background-color: var(--white);
+}
+
+th {
+    background-color: var(--color);
+    color: var(--white);
+}
+
+td,
+th {
+    padding: 5px;
+    text-align: center;
+}
+
+::selection {
+    color: var(--white);
+    background: var(--color);
+}
+
+::-moz-selection {
+    color: var(--white);
+    background: var(--color);
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color);
+}
+
+
+/* thanks astro for this css :) */
