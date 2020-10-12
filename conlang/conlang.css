@@ -26,9 +26,8 @@
 .main {
     margin-left: 292px;
     padding: 20px 45px;
-    width: 40%;
+    width: 50%;
 }
-
 body {
     background-color: var(--white);
     color: var(--black);
@@ -113,8 +112,7 @@ th {
     color: var(--white);
 }
 
-td,
-th {
+td, th {
     padding: 5px;
     padding-left: 0.4em;
     padding-right: 0.4em;
@@ -144,5 +142,8 @@ th {
     background: var(--color);
 }
 
+sub, sup {
+    font-size: 0.7em;
+}
 
 /* thanks astro for this css :) */

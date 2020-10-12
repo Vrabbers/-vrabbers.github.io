@@ -15,7 +15,7 @@
                 <h2> Phonology </h2>
                 <a class="tocl" href="#Vowels">Vowels</a><br>
                 <a class="tocl" href="#Consonants">Consonants</a>
-
+                <a class="tocl" href="#Phonotactics">Phonotactics</a>
             </div>
         </div>  
         <div class="main">
@@ -24,7 +24,7 @@
             
             <h1>Vowels</h1>
             <a id="Vowels"></a>
-            There are two sets of vowels: High vowels and low vowels. This is important because some particles harmonize.<p>
+            There are two sets of vowels: High vowels and low vowels, divided into 5 groups (a, e, i, o, u). This is important because some particles harmonize.<p>
             <table>
                 <tr> <th>Group</th> <th>a</th>   <th>e</th> <th>i</th> <th>o</th> <th>u</th>  </tr>
                 <tr> <th>High</th>  <td>a</td>   <td>ɛ</td> <td>i</td> <td>ɔ</td> <td>ɯ</td>  </tr>
@@ -59,8 +59,39 @@
                     <tr> <td>/j/</td> <td>y</td> </tr>
                     <tr> <td>/ʎ/</td> <td>ly</td> </tr>
                 </table>
+            </p>
             <p>
-            <div style="font-size: 0.7em;">Thanks to Astro for the CSS.</div>
+                <h1>Phonotactics</h1>
+                <a id="Phonotactics"></a>
+                The syllable structure is <b>(C)<sub>1</sub>V(C)<sub>2</sub></b><br>
+                For <b>(C)<sub>1</sub></b>, all consonants are allowed. Similarly, for V, all vowels are allowed.<br>
+                For <b>(C)<sub>2</sub></b>, only the nasals, unvoiced plosives, approximants, l and r are allowed.<br>
+                Double consonants are allowed, where C<sub>2</sub> is the same consonant as the next syllable's C<sub>1</sub>.
+            </p>
+
+            <p>
+                <b>Sound change patterns:</b><br>
+                <table>
+                    <tr><th>From</th>                     <th>To</th>                       <th>Where</th></tr>
+                    <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;V(C)</td>  <td>(C)V&nbsp;&nbsp;C<sub>1</sub>V(C)</td>  <td></td></tr>
+                    <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;jV(C)</td> <td>(C)VC<sub>2</sub>&nbsp;&nbsp;C<sub>2</sub>V(C)</td>  
+                        <td>C<sub>1</sub> is either n, ŋ, k or l<br>
+                            C<sub>2</sub> is the palatal in the same row as C<sub>1</sub>.</td></tr>
+                    <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;C<sub>2</sub>V(C)</td> <td>(C)V&nbsp;&nbsp;C<sub>1</sub>C<sub>2</sub>V(C)</td>
+                    <td>C<sub>2</sub> is either j or w.</td></tr>
+                    
+                </table>
+                Lowercase letters are their specific IPA symbol.
+                A space separates syllables.
+
+            </p>
+
+            <p>
+                In the romanization system, every syllable is divided with a space.
+            </p>
+            <p>
+                <div style="font-size: 0.7em;">Thanks to Astro for the CSS.</div>
+            </p>
         </div>
     </body>
 </html>
