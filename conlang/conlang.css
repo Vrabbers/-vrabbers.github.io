@@ -116,7 +116,10 @@ th {
 td,
 th {
     padding: 5px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
     text-align: center;
+    min-width: 1em;
 }
 
 ::selection {
