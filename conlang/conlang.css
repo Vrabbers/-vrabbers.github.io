@@ -1,106 +1,99 @@
-@font-face {
-    font-family: Contemporary;
-    src: url(Contemporary-Regular.ttf);
-}
-
 * {
-    font-family: Contemporary, sans-serif;
+    font-family: Cambria, Cochin, Georgia, serif;    
 }
 
 :root {
-    --white: #f0ece2;
-    --black: #101010;
-    --color: #69779b;
+    --white: #f7f7f7;
+    --black: #100303;
+    --color: #95389e;
 }
 
-.sidebar {
-    height: 100%;
-    width: 240px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-}
-
-.main {
-    margin-left: 292px;
-    padding: 20px 45px;
-    width: 50%;
-}
-body {
-    background-color: var(--white);
-    color: var(--black);
-}
-
-.sidebar {
-    background-color: var(--black);
-    width: 292px;
-}
-
-.sidebarhead {
-    padding: 20px;
-    background-color: var(--color);
-}
-
-.sidebarhead a {
-    text-decoration: none;
-    
-}
-
-.sidebarhead h1 {
-    color: var(--white);
-    text-align: center;
-    margin: 0px;
-    margin-top: 0.5em;
-    text-decoration: none;
-}
-
-.toc {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 5px 30px 30px 30px;
+a { 
+    color: var(--color);
 }
 
 h1 {
-    color: var(--black);
-    border-left: solid 5px var(--color);
-    padding: 6px 18px;
-    font-size: 24px;
-    margin: 40px 10px 10px 10px;
+    counter-reset: h2;
+    font-weight: normal;
+    margin-top: 0;
+    font-size: 1.75em;
+}
+
+h2::before {
+    counter-increment: h2; content: counter(h2) ". ";
 }
 
 h2 {
-    font-size: 25px;
-    margin-top: 25px;
-    margin-bottom: 0px;
+    counter-reset: h3;
+    font-weight: normal;
+    margin: 0.5em 0 0.5em;
 }
 
-* {
+h3::before {
+    counter-increment: h3; content: counter(h2) "." counter(h3) " ";
+}
+
+h3 {
+    font-weight: normal;
+    margin: 0.5em 0 0.5em;
+}
+
+p {
+    margin: 0.5em 0 0.5em;
+}
+
+body {
     font-size: 20px;
-    font-weight: Normal;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#main {
+    background-color: var(--white);
+    color: var(--black);
+    width: 50em;
+    min-width: min-content;
+    max-width: 100%;
     text-align: justify;
+    box-shadow: 0 0 10px var(--color);
 }
 
-b {
-    color: var(--color);
-}
-
-a.tocl {
-    color: var(--color);
-    text-decoration: none;
-}
-
-a.tocl:hover {
+#pagehead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color);
     color: var(--white);
+    text-shadow: var(--black);
+    padding: 0.4em;
+    box-shadow: 0 0 10px var(--color);
+}
+
+#pagehead span {
+    margin-inline-start: 1rem;
+    font-size: 2em;
+}
+
+#page {
+    padding: 1em; 
+    padding-bottom: 0;
+}
+
+#toc > ol {
+    padding: 0;
+}
+
+#toc a {
+    text-decoration: none;
 }
 
 table {
     background-color: var(--black);
     margin: auto;
-    margin-bottom: 15px;
-    border-radius: 3px;
-    padding: 3px;
+    margin-bottom: 1em;
+    padding:1px;
+    border-radius: 1.5px;
 }
 
 td {
@@ -110,14 +103,57 @@ td {
 th {
     background-color: var(--color);
     color: var(--white);
+    font-weight: normal;
 }
 
-td, th {
-    padding: 5px;
+td, th, caption {
+    padding: 0.2em;
     padding-left: 0.4em;
     padding-right: 0.4em;
     text-align: center;
     min-width: 1em;
+}
+
+caption {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+b {
+    font-weight: normal;
+    color: var(--color);
+}
+
+ol { 
+    counter-reset: item 
+}
+
+ol > li { 
+    display: block 
+}
+
+ol > li::before { 
+    content: counters(item, ".") ". "; 
+    counter-increment: item; 
+}
+
+li ol > li::before {
+    content: counters(item, ".") " "; 
+}
+
+ul > li {
+    list-style-image: url("ilmarker.svg");
+}
+
+hr {
+    color: var(--color);
+    margin: 1em 0 0 0
+}
+
+#footer {
+    text-align: center;
+    font-size: 0.7em;
+    margin: 1em;
 }
 
 ::selection {
@@ -131,7 +167,7 @@ td, th {
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: min-content;
 }
 
 ::-webkit-scrollbar-track {
