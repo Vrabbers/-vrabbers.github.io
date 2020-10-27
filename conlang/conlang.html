@@ -68,7 +68,7 @@
                     Double consonants are allowed, where C<sub>2</sub> is the same consonant as the next syllable's C<sub>1</sub>.
                 </p>
                     <table>
-                        <caption>Sound change patterns</caption>
+                        <th class="caption" colspan="3">Sound change patterns</th>
                         <tr><th>From</th>                     <th>To</th>                       <th>Where</th></tr>
                         <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;V(C)</td>  <td>(C)V&nbsp;&nbsp;C<sub>1</sub>V(C)</td>  <td></td></tr>
                         <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;jV(C)</td> <td>(C)VC<sub>2</sub>&nbsp;&nbsp;C<sub>2</sub>V(C)</td>  
@@ -116,6 +116,8 @@
                     Stored alphabetically in Supplermentary Private Use Area-A, logograms first and the alphabet next,
                     in alphabetical order.
                 </p>
+                <h2 id="Other Tools" class="linkhead">Other Tools</h2>
+                <button onclick="randomWord()">Random Word Generator</button> <span id="randomout"></span>
                 <hr>
                 <p>
                     <div id="footer">
@@ -160,6 +162,17 @@
                         ol.append(li2);
                     }
                     document.getElementById("toc").append(ol);
+
+                    function randomWord() {
+                        let start = ["m", "n", "ny", "ng", "p", "b", "t", "d", "hy", "gy", "k", "g", "ts", "dz", "f", "v",
+                                    "s", "z", "ky", "gy", "h", "y", "w", "l", "ly", "r", "", "", "", ""];
+                        let vowels = ["a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú"];
+                        let end = ["m", "n", "ny", "ng", "p", "t", "ky", "k", "y", "w", "l", "ly", "r", "", "", "", ""]
+                        let word = start[Math.floor(Math.random() * start.length)] +
+                                   vowels[Math.floor(Math.random() * vowels.length)] +
+                                   end[Math.floor(Math.random() * end.length)];
+                        document.getElementById("randomout").innerText = word;
+                    }
                 </script>
             </div>
         </div>
