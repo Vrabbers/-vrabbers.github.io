@@ -13,14 +13,15 @@
                 <img src="./icon.svg" style="height: 65px;" alt=""><span>Kón Láng</span>
             </div>
             <div id="page">    
-                <h1>Kón Láng</h1>
+                <h1>Table of Contents</h1>
                 <div id="toc">
                 </div>
                 <p>
+                <h2 class="linkhead">Preface</h2>
                     Kón Láng is a personal conlang.
                 </p>
-                <h2 id="Phonology" class="linkhead">Phonology</h2>
-                <h3 id="Vowels" class="linkhead">Vowels</h3>
+                <h2 class="linkhead">Phonology</h2>
+                <h3 class="linkhead">Vowels</h3>
                 <p>
                     There are two sets of vowels: Up vowels and down vowels, divided into 5 groups (a, e, i, o, u).
                     This distinction is used to harmonize particles.
@@ -33,7 +34,7 @@
                 <p>
                     In the romanized orthography, up vowels are preferably represented with an acute accent &#9676;&#769;, but double vowels can be used instead.
                 </p>
-                <h3 id="Consonants" class="linkhead">Consonants</h3>
+                <h3 class="linkhead">Consonants</h3>
                 
                 <table>
                     <tr> <th></th>           <th>Labial</th>   <th>Dental</th>     <th>Palatal</th>    <th>Velar</th>          <th>Glottal</th> </tr>
@@ -60,7 +61,7 @@
                         <tr> <td>/ɾ/</td> <td>r</td> </tr>
                     </table>
                 </p>
-                <h3 id="Phonotactics" class="linkhead">Phonotactics</h3>
+                <h3 class="linkhead">Phonotactics</h3>
                 <p>
                     The syllable structure is <b>(C)<sub>1</sub>V(C)<sub>2</sub></b><br>
                     For <b>(C)<sub>1</sub></b>, all consonants are allowed. Similarly, for V, all vowels are allowed.<br>
@@ -86,8 +87,8 @@
                 <p>
                     In the romanization system, every syllable is divided with a space.
                 </p>
-                <h2 id="Orthography" class="linkhead">Orthography</h2>
-                <h3 id="Logography" class="linkhead">Logography</h3>
+                <h2 class="linkhead">Orthography</h2>
+                <h3 class="linkhead">Logography</h3>
                 <p>
                     Logograms also mostly represent individual words, but some morphemes that inflect verbs/adjectives
                     will have two readings based on the vowel groups. Their default reading is the low one.
@@ -106,17 +107,17 @@
                         <li><b>Phonetic: </b> A semantic component, giving an idea of meaning, and a phonetic component, with a similar sound.</li>
                     </ul>
                 </p>
-                <h3 id="Alphabet" class="linkhead">Alphabet</h3>
+                <h3 class="linkhead">Alphabet</h3>
                 <p>
                     Some of the simpler or simplified logograms are used also as an alphabet, to write loanwords and such
                     phonetically, written with a line under.
                 </p>
-                <h3 id="Font" class="linkhead">Font</h3>
+                <h3 class="linkhead">Font</h3>
                 <p>
                     Stored alphabetically in Supplermentary Private Use Area-A, logograms first and the alphabet next,
                     in alphabetical order.
                 </p>
-                <h2 id="Other Tools" class="linkhead">Other Tools</h2>
+                <h2 class="linkhead">Other Tools</h2>
                 <button onclick="randomWord()">Random Word Generator</button> <span id="randomout"></span>
                 <hr>
                 <p>
@@ -129,6 +130,9 @@
                     let headerLinks = document.getElementsByClassName("linkhead");
                     let headers = [];
                     for (l of headerLinks){
+                        if (l.id === "")
+                            l.id = l.innerText;
+
                         if (l.tagName === "H2"){
                             headers.push([l.id]);
                         }

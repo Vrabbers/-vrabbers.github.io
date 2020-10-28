@@ -146,6 +146,10 @@ ul > li {
     list-style-image: url("ilmarker.svg");
 }
 
+li {
+    font-size: 1em;
+}
+
 hr {
     color: var(--color);
     margin: 1em 0 0 0
