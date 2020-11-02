@@ -2,9 +2,10 @@
     <html>
         <head>
             <meta charset="UTF-8">
-            <link rel="icon" type="image/png" href="./icon.svg">
+            <link rel="icon" type="image/svg" href="./icon.svg">
             <title>Kón Láng</title>
             <link rel="stylesheet" href="conlang.css">
+            <script src="conlang.js"></script>
         </head>
 
     <body>
@@ -31,9 +32,6 @@
                     <tr> <th>Up</th>  <td>a</td>   <td>ɛ</td> <td>i</td> <td>ɔ</td> <td>ɯ</td>  </tr>
                     <tr> <th>Down</th>   <td>ə~ɐ</td> <td>e</td> <td>ɪ</td> <td>o</td> <td>u</td>  </tr>
                 </table>
-                <p>
-                    In the romanized orthography, up vowels are preferably represented with an acute accent &#9676;&#769;, but double vowels can be used instead.
-                </p>
                 <h3 class="linkhead">Consonants</h3>
                 
                 <table>
@@ -48,18 +46,6 @@
                 </table>
                 <p>
                     Unless stated in this table, the romanization is just the IPA symbol.
-                    <table>
-                        <tr> <th>Phoneme</th> <th>Romanized</th> </tr>
-                        <tr> <td>/ɲ/</td> <td>ny</td> </tr>
-                        <tr> <td>/ŋ/</td> <td>ng</td> </tr>
-                        <tr> <td>/c/</td> <td>ky</td> </tr>
-                        <tr> <td>/ɟ/</td> <td>gy</td> </tr>
-                        <tr> <td>/ç/</td> <td>hy</td> </tr>
-                        <tr> <td>/ʝ/</td> <td>zy</td> </tr>
-                        <tr> <td>/j/</td> <td>y</td> </tr>
-                        <tr> <td>/ʎ/</td> <td>ly</td> </tr>
-                        <tr> <td>/ɾ/</td> <td>r</td> </tr>
-                    </table>
                 </p>
                 <h3 class="linkhead">Phonotactics</h3>
                 <p>
@@ -80,7 +66,7 @@
                         
                     </table>
                 <p>    
-                    Lowercase letters are their specific IPA symbol.
+                    Lowercase letters are the IPA symbol.
                     A space separates syllables.
                 </p>
 
@@ -88,6 +74,29 @@
                     In the romanization system, every syllable is divided with a space.
                 </p>
                 <h2 class="linkhead">Orthography</h2>
+                <h3 class="linkhead">Romanization</h3>
+                <p>
+                    Vowels are written following their group (a, e, i, o, u), and take an acute accent ◌́  if it is an up vowel.
+                    Even using though the accent is preferred, the vowel may be doubled if using the accent is not possible.  
+                </p>
+                <p>
+                    Most consonants are written following their IPA symbol, except for the ones in this table.
+                    <table>
+                        <tr> <th>Phoneme</th> <th>Romanized</th> </tr>
+                        <tr> <td>/ɲ/</td> <td>ny</td> </tr>
+                        <tr> <td>/ŋ/</td> <td>ng</td> </tr>
+                        <tr> <td>/c/</td> <td>ky</td> </tr>
+                        <tr> <td>/ɟ/</td> <td>gy</td> </tr>
+                        <tr> <td>/ç/</td> <td>hy</td> </tr>
+                        <tr> <td>/ʝ/</td> <td>zy</td> </tr>
+                        <tr> <td>/j/</td> <td>y</td> </tr>
+                        <tr> <td>/ʎ/</td> <td>ly</td> </tr>
+                        <tr> <td>/ɾ/</td> <td>r</td> </tr>
+                    </table>
+                </p>
+                <p>
+                    In the romanization system, each syllable is divided by a space.
+                </p>
                 <h3 class="linkhead">Logography</h3>
                 <p>
                     Logograms also mostly represent individual words, but some morphemes that inflect verbs/adjectives
@@ -103,7 +112,7 @@
                     <b>Forming characters:</b> The characters can be formed in one of three ways:
                     <ul>
                         <li><b>Pictographic: </b> A picture or a representation of the idea.</li>
-                        <li><b>Ideographic: </b> Pictures joined together to form a broader idea.</li>
+                        <li><b>Ideographic: </b> Pictures joined together to form another idea.</li>
                         <li><b>Phonetic: </b> A semantic component, giving an idea of meaning, and a phonetic component, with a similar sound.</li>
                     </ul>
                 </p>
@@ -127,46 +136,7 @@
                     </div>
                 </p>
                 <script>
-                    let headerLinks = document.getElementsByClassName("linkhead");
-                    let headers = [];
-                    for (l of headerLinks){
-                        if (l.id === "")
-                            l.id = l.innerText;
-
-                        if (l.tagName === "H2"){
-                            headers.push([l.id]);
-                        }
-                        else if (l.tagName === "H3"){
-                            let h2 = headers.pop();
-                            if (h2[1] == undefined) h2[1] = [];
-                            h2[1].push(l.id);
-                            headers.push(h2);
-                        }
-                    }
-
-                    let ol = document.createElement("ol");
-                    for(h2 of headers) {
-                        let li2 = document.createElement("li");     
-                        let a2 = document.createElement("a");
-                        a2.innerText = h2[0]
-                        a2.href = "#" + h2[0];
-                        li2.append(a2);
-                        if (Array.isArray(h2[1])) {
-                            let ol3 = document.createElement("ol");
-                            for (h3 of h2[1]) {
-                                let li3 = document.createElement("li");
-                                let a3 = document.createElement("a");
-                                a3.innerText = h3;
-                                a3.href = "#" + h3;
-                                li3.append(a3);
-                                ol3.append(li3);
-                            }
-                            li2.append(ol3);
-                        }
-                        ol.append(li2);
-                    }
-                    document.getElementById("toc").append(ol);
-
+                    autoToc();
                     function randomWord() {
                         let start = ["m", "n", "ny", "ng", "p", "b", "t", "d", "hy", "zy", "k", "g", "ts", "dz", "f", "v",
                                     "s", "z", "ky", "gy", "h", "y", "w", "l", "ly", "r", "", "", "", ""];

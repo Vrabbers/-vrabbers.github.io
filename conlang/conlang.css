@@ -173,6 +173,7 @@ button {
     padding: 0.2em 0.4em;
     box-shadow: 0 0 0.5em var(--color);
     border-radius: 1.5px;
+    transition: filter 0.1s;
 }
 
 button:hover {

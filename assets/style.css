@@ -1,142 +1,246 @@
-
-:root{
-    --dark-bg: #202020;
-    --dark-fg: white;
-    --dark-hidden-fg:dimgray;
-    --light-bg: #E0E0F4; 
-    --light-fg: #202020;
+@font-face {
+    font-family: noto;
+    src: url("NotoSans-Regular.ttf");
 }
 
-*{
-    font-family:sans-serif;
-    font-weight:normal;
-    
+* {
+    font-family: noto, sans-serif;
+}
+:root {
+    --white: #f7f7f7;
+    --black: #100303;
+    --color: #0d7000;
+}
+
+a { 
+    color: var(--color);
+}
+
+h1 {
+    counter-reset: h2;
+    font-weight: normal;
+    margin-top: 0;
+    font-size: 1.75em;
+}
+
+h2 {
+    counter-reset: h3;
+    font-weight: normal;
+    margin: 0 0 0.5em;
 }
 
 
-
-p{
-    margin-bottom: 10px;
-    margin-top: 10px;
+p {
+    margin: 0.5em 0 0.5em;
 }
 
-header{
-    background-color: var(--dark-bg);
-    color: var(--dark-fg);
-    margin-bottom: 20px;
-    border-radius:10px;
-    padding-bottom: 15px;
-
+body {
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-header h1{
-    margin-bottom: 10px;
-    padding-top:15px;
+#main {
+    background-color: var(--white);
+    color: var(--black);
+    width: 50em;
+    min-width: min-content;
+    max-width: 100%;
+    text-align: justify;
+    box-shadow: 0 0 0.5em var(--color);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 
-button{
-    background-color: var(--dark-bg);
-    color: var(--dark-fg);
-    border-radius: 10px;
-    padding: 0.5em;
-    font-size:initial;
-    border-color: var(--dark-bg);
-    border-style: solid;
+#pagehead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color);
+    color: var(--white);
+    text-shadow: var(--black);
+    padding: 0.4em;
+    box-shadow: 0 0 0.5em var(--color);
+    flex-grow: 0
 }
 
-header button{
-    margin-left: 0px;
-    margin-right: 0px;
+#pagehead span {
+    margin-inline-start: 1rem;
+    font-size: 2em;
 }
 
-header h2{
-    margin:10px;
-}
-button:hover{
-    background-color: black;
-    transition: 0.2s;
+#page {
+    padding: 1em; 
+    padding-bottom: 0;
+    flex-grow: 2;
 }
 
-button:active{
-    background-color: var(--light-bg);
-    color: var(--light-fg);
-    transition: 0.05s;
-
+#toc > ol {
+    padding: 0;
 }
 
-body{
-    position: relative;
-    background-color: var(--light-bg);
-    margin-left: 10px;
-    margin-right: 10px;
+#toc a {
+    text-decoration: none;
+}
+
+table {
+    background-color: var(--black);
+    margin: auto;
+    margin-bottom: 1em;
+    padding:1px;
+    border-radius: 1.5px;
+    box-shadow: 0 0 0.5em var(--color);
+}
+
+td {
+    background-color: var(--white);
+}
+
+th {
+    background-color: var(--color);
+    color: var(--white);
+    font-weight: normal;
+}
+
+td, th, caption {
+    padding: 0.2em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
     text-align: center;
-    height:100%;
-    min-height:100%;
+    min-width: 1em;
 }
 
-body::after {
-    content: '';
-    display: block;
-    height: 1em; /* Set same as footer's height */
-  }
-
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height:1em;
-    font-size:0.8em;
-    clear: both;
-    position: relative;
+.caption {
+    background-color: var(--black);
+    color: var(--white);
 }
 
-input[type=text]{
-    padding: 0.5em 0.5em;
-    border-radius:10px;
-    border-color:var(--light-fg);
-    background-color:whitesmoke;
+b {
+    font-weight: normal;
+    color: var(--color);
+}
+
+ol { 
+    counter-reset: item 
+}
+
+ol > li { 
+    display: block 
+}
+
+ol > li::before { 
+    content: counters(item, ".") ". "; 
+    counter-increment: item; 
+}
+
+li ol > li::before {
+    content: counters(item, ".") " "; 
 }
 
 
-/*Page-specific stuff*/
-
-.shwcheat{
-    border-style: solid;
-    border-radius: 10px;
-    float:right;
-    border-width: 2px;
-    padding:10px;
-    font-size: 0.85em;
-    background-color:rgb(253, 253, 253);
-}
-
-#shwbox{
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 2px;
-    padding: 0.5em 0.5em;
-    margin:inherit;
-    border-style:solid;
-    display:inline-block;
-    width:50%;
-}
-
-#bigindicator{
-    margin-top:0.5em;
-    font-size:1.5em;
-}
-
-#answerbox{
-    width: 50%;
+li {
     font-size: 1em;
-    padding: 0.5em 0.5em;
-    text-align: center;
 }
 
-@media only screen and (max-width: 650px) {
-    .shwcheat{
-        float:none;
-        width: 240px;
-        margin: 0 auto
-    }
+hr {
+    color: var(--color);
+    margin: 1em 0 0.75em 0;
+    border-bottom: 1px; 
 }
+
+#footer {
+    text-align: center;
+    font-size: 0.7em;
+    margin: 1em;
+    justify-self: self-end;
+    flex-grow: 0;
+    margin-bottom: -1em;
+}
+
+button {
+    font-size: 1em;
+    background-color: var(--color);
+    color: var(--white);
+    border: none;
+    padding: 0.2em 0.4em;
+    box-shadow: 0 0 0.5em var(--color);
+    border-radius: 1.5px;
+    transition: filter 0.1s;
+}
+
+button:hover {
+    filter: brightness(85%);
+}
+
+button:active {
+    filter: brightness(80%) contrast(120%);
+}
+
+.infolink {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25rem;
+    background-color: var(--color);
+    color: var(--white);
+    border: none;
+    padding: 0.2em 0.4em;
+    box-shadow: 0 0 0.5em var(--color);
+    border-radius: 1.5px;
+    transition: filter 0.1s;
+    margin: 0 0 0.8em 0;
+}
+
+.infolink .moreinfo {
+    margin-top: 0em;
+    font-size: 1rem;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.infolink:hover > .moreinfo {
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.infolink:active {
+    filter: brightness(80%) contrast(120%); 
+}
+
+.moreinfo {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.moreinfo img {
+    height: auto;   
+    object-fit: contain;
+}
+
+::selection {
+    color: var(--white);
+    background: var(--color);
+}
+
+::-webkit-scrollbar {
+    width: min-content;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color);
+}
+
+sub, sup {
+    font-size: 0.7em;
+}
+
+/* thanks astro for this css :) */
