@@ -1,4 +1,8 @@
-
-function footer(){
-    document.write("&copy; Vrabbers 2018-2020")
+function autoVh() {
+    function vhCheck() {
+        let vh = window.innerHeight;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    window.addEventListener('resize', vhCheck);
+    vhCheck();
 }
