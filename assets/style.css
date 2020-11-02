@@ -195,16 +195,27 @@ button:active {
 
 .infolink .moreinfo {
     margin-top: 0em;
+    margin-bottom: 0.2em;
     font-size: 1rem;
     height: 0;
     overflow: hidden;
     opacity: 0;
+    
 }
 
 .infolink:hover > .moreinfo {
     height: auto;
     opacity: 1;
     transition: opacity 0.2s;
+}
+
+@media (prefers-reduced-motion) {
+    .infolink .moreinfo {
+        height: auto;
+        overflow: hidden;
+        opacity: 1;
+    }
+    
 }
 
 .infolink:active {
