@@ -215,4 +215,17 @@ sub, sup {
     font-size: 0.7em;
 }
 
+#error {
+    color: var(--color);
+}
+
+.entry {
+    margin-bottom: 1em;
+}
+
+.entry .word {
+    font-size: 1.2em;
+    color: var(--color);
+}
+
 /* thanks astro for this css :) */

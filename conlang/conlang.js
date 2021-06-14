@@ -41,3 +41,34 @@ function autoToc() {
     document.getElementById("toc").innerHTML = ""
     document.getElementById("toc").append(ol);
 }
+
+async function setupDict() {
+    let docDict = document.getElementById("dict");
+    docDict.hidden = true;
+
+    try {
+        let req = await fetch("dictionary.json");
+        let jsonDict = await req.json();
+
+        for (let w in jsonDict) {
+            let entry = document.createElement("div");
+            entry.className = "entry";
+            let word = document.createElement("div");
+            word.className = "word";
+            let def = document.createElement("div");
+            def.className = "def";
+            
+            word.innerText = w;
+            def.innerText = jsonDict[w];
+
+            entry.append(word, def);
+            docDict.append(entry);
+        }
+        docDict.hidden = false;
+
+    } catch (e) {
+        console.error(e);
+        let docError = document.getElementById("error");
+        docError.innerText = "There was an error building the dictionary.";
+    }
+}

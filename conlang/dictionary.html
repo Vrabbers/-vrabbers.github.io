@@ -6,6 +6,7 @@
             <title>[no name]</title>
             <link rel="stylesheet" href="conlang.css">
             <script src="../assets/utilities.js"></script>
+            <script src="conlang.js"></script>
         </head>
 
     <body>
@@ -17,7 +18,9 @@
                 </div>
             </div>
             <div id="page">    
-
+                <span id="error"></span>
+                <div id="dict">
+                </div>
             </div>
             <div id="footer">
                 <hr>
@@ -30,5 +33,6 @@
     </body>
     <script>
         autoVh();
+        setupDict();
     </script>
 </html>
