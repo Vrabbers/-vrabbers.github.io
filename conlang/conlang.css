@@ -228,4 +228,8 @@ sub, sup {
     color: var(--color);
 }
 
+.entry .def {
+    padding-inline-start: 1.5em;
+}
+
 /* thanks astro for this css :) */
