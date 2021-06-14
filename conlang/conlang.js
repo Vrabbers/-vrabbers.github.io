@@ -42,14 +42,11 @@ function autoToc() {
     document.getElementById("toc").append(ol);
 }
 
-async function setupDict() {
+function setupDict() {
     let docDict = document.getElementById("dict");
     docDict.hidden = true;
 
     try {
-        let req = await fetch("dictionary.json");
-        let jsonDict = await req.json();
-
         for (let w in jsonDict) {
             let entry = document.createElement("div");
             entry.className = "entry";

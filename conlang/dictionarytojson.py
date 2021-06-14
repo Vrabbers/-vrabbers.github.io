@@ -8,5 +8,6 @@ with open("dictionary.txt", "r") as r:
 
 dictionary = { match.group(1): match.group(2).strip() for match in pattern.finditer(file_data) }
 
-with open("dictionary.json", "w") as w:
+with open("dictionary.js", "w") as w:
+    w.write("let jsonDict = ")
     json.dump(dictionary, w, indent = 4)
