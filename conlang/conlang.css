@@ -140,25 +140,21 @@ b {
     color: var(--color);
 }
 
-ol { 
+#toc ol { 
     counter-reset: item 
 }
 
-ol > li { 
+#toc ol > li { 
     display: block 
 }
 
-ol > li::before { 
+#toc ol > li::before { 
     content: counters(item, ".") ". "; 
     counter-increment: item; 
 }
 
-li ol > li::before {
+#toc li ol > li::before {
     content: counters(item, ".") " "; 
-}
-
-li {
-    font-size: 1em;
 }
 
 hr {
@@ -223,13 +219,23 @@ sub, sup {
     margin-bottom: 1em;
 }
 
-.entry .word {
+.word {
     font-size: 1.2em;
     color: var(--color);
 }
 
-.entry .def {
-    padding-inline-start: 1.5em;
+.def {
+    margin-top: 0;
 }
+
+.def {
+    padding-left: 1.5em;
+}
+
+.def li::marker {
+    color: var(--color);
+    font-size: 0.7em;
+}
+
 
 /* thanks astro for this css :) */
