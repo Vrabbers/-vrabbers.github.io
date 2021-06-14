@@ -3,7 +3,7 @@
         <head>
             <meta charset="UTF-8">
             <link rel="icon" type="image/svg" href="./icon.svg">
-            <title>Kón Láng</title>
+            <title>[no name]</title>
             <link rel="stylesheet" href="conlang.css">
             <script src="conlang.js"></script>
         </head>
@@ -11,141 +11,99 @@
     <body>
         <div id="main">
             <div id="pagehead">
-                <img src="./icon.svg" style="height: 3em;" alt=""><span>Kón Láng</span>
+                <span>[no name]</span>
+                <div class="link">
+                    <a href="conlang.html">Main</a>⬩<a href="dictionary.html">Dictionary</a>
+                </div>
             </div>
             <div id="page">    
                 <h1>Table of Contents</h1>
                 <div id="toc">
+                    JavaScript must be enabled for the ToC to be generated.
                 </div>
                 <p>
                 <h2 class="linkhead">Preface</h2>
-                    Kón Láng is a personal conlang.
+                    [no name] is a personal conlang.
                 </p>
                 <h2 class="linkhead">Phonology</h2>
                 <h3 class="linkhead">Vowels</h3>
                 <p>
-                    There are two sets of vowels: Up vowels and down vowels, divided into 5 groups (a, e, i, o, u).
-                    This distinction is used to harmonize particles.
+                    There are 5 vowels, which may be long or short. The specific quality of the vowel changes based on its length.
                 </p>
                 <table>
-                    <tr> <th>Group</th> <th>a</th>   <th>e</th> <th>i</th> <th>o</th> <th>u</th>  </tr>
-                    <tr> <th>Up</th>  <td>a</td>   <td>ɛ</td> <td>i</td> <td>ɔ</td> <td>ɯ</td>  </tr>
-                    <tr> <th>Down</th>   <td>ə~ɐ</td> <td>e</td> <td>ɪ</td> <td>o</td> <td>u</td>  </tr>
+                    <tr> <th>Name</th>  <th>a</th>   <th>e</th>  <th>i</th>  <th>o</th>  <th>u</th>  </tr>
+                    <tr> <th>Long</th>  <td>aː</td>  <td>eː</td> <td>iː</td> <td>oː</td> <td>uː</td> </tr>
+                    <tr> <th>Short</th> <td>ɐ</td>   <td>ɛ</td>  <td>ɪ</td>  <td>ɔ</td>  <td>ʊ</td>  </tr>
                 </table>
                 <h3 class="linkhead">Consonants</h3>
                 
                 <table>
                     <tr> <th></th>           <th>Labial</th>   <th>Dental</th>     <th>Palatal</th>    <th>Velar</th>          <th>Glottal</th> </tr>
                     <tr> <th>Nasal</th>      <td>m</td>        <td>n</td>          <td>ɲ</td>          <td>ŋ</td>              <td> </td>       </tr>
-                    <tr> <th>Plosives</th>   <td>p&emsp;b</td> <td>t&emsp;d</td>   <td>c&emsp;ɟ</td>   <td>k&emsp;g</td>       <td> </td>       </tr>
-                    <tr> <th>Affricates</th> <td> </td>        <td>ts&emsp;dz</td> <td> </td>          <td> </td>              <td> </td>       </tr>
-                    <tr> <th>Fricatives</th> <td>f&emsp;v</td> <td>s&emsp;z</td>   <td>ç&emsp;ʝ</td>   <td> </td>              <td>h</td>       </tr>
-                    <tr> <th>Approx.</th>    <td> </td>        <td> </td>          <td>j</td>          <td>w</td>              <td> </td>       </tr>
+                    <tr> <th>Plosives</th>   <td>p&emsp;b</td> <td>t&emsp;d</td>   <td>c&emsp;ɟ</td>   <td>k&emsp;ɡ</td>       <td> </td>       </tr>
+                    <tr> <th>Fricatives</th> <td>f&emsp;v</td> <td>s&emsp;z</td>   <td>ç&emsp;ʝ</td>   <td>x&emsp;ɣ</td>       <td>h</td>       </tr>
+                    <tr> <th>Approx.</th>    <td>w</td>        <td> </td>          <td>j</td>          <td></td>               <td> </td>       </tr>
                     <tr> <th>Lat. App.</th>  <td> </td>        <td>l</td>          <td>ʎ</td>          <td> </td>              <td> </td>       </tr>
                     <tr> <th>Tap</th>        <td> </td>        <td>ɾ</td>          <td> </td>          <td> </td>              <td> </td>       </tr>
                 </table>
-                <p>
-                    Unless stated in this table, the romanization is just the IPA symbol.
-                </p>
+
                 <h3 class="linkhead">Phonotactics</h3>
                 <p>
-                    The syllable structure is <b>(C)<sub>1</sub>V(C)<sub>2</sub></b><br>
-                    For <b>(C)<sub>1</sub></b>, all consonants are allowed. Similarly, for V, all vowels are allowed.<br>
-                    For <b>(C)<sub>2</sub></b>, only the nasals, unvoiced plosives, approximants, l, ly and r are allowed.<br>
-                    Double consonants are allowed, where C<sub>2</sub> is the same consonant as the next syllable's C<sub>1</sub>.
-                </p>
-                    <table>
-                        <th class="caption" colspan="3">Sound change patterns</th>
-                        <tr><th>From</th>                     <th>To</th>                       <th>Where</th></tr>
-                        <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;V(C)</td>  <td>(C)V&nbsp;&nbsp;C<sub>1</sub>V(C)</td>  <td></td></tr>
-                        <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;jV(C)</td> <td>(C)VC<sub>2</sub>&nbsp;&nbsp;C<sub>2</sub>V(C)</td>  
-                            <td>C<sub>1</sub> is either n, ŋ, k or l<br>
-                                C<sub>2</sub> is the palatal in the same row as C<sub>1</sub>.</td></tr>
-                        <tr><td>(C)VC<sub>1</sub>&nbsp;&nbsp;C<sub>2</sub>V(C)</td> <td>(C)V&nbsp;&nbsp;C<sub>1</sub>C<sub>2</sub>V(C)</td>
-                        <td>C<sub>2</sub> is either j or w.</td></tr>
-                        
-                    </table>
-                <p>    
-                    Lowercase letters are the IPA symbol.
-                    A space separates syllables.
+                    The syllable structure is <b>(C)V(C)</sub></b>, where:<br>
+                    In the onset, all consonants except <b>/ŋ/</b> are allowed.<br>
+                    In the coda, all consonants except <b>/h/</b> are allowed, but there is no voicing distinction, and the unvoiced sound is preffered.
                 </p>
 
-                <p>
-                    In the romanization system, every syllable is divided with a space.
-                </p>
                 <h2 class="linkhead">Orthography</h2>
-                <h3 class="linkhead">Romanization</h3>
                 <p>
-                    Vowels are written following their group (a, e, i, o, u), and take an acute accent ◌́  if it is an up vowel.
-                    Even using though the accent is preferred, the vowel may be doubled if using the accent is not possible.  
+                    Vowels are written with an accute accent (<b>á é í ó ú</b>) if they are long, and without if they are short. 
                 </p>
                 <p>
-                    Most consonants are written following their IPA symbol, except for the ones in this table.
+                    Most consonants are written as their IPA symbol, except for the ones in this table.
                     <table>
-                        <tr> <th>Phoneme</th> <th>Romanized</th> </tr>
-                        <tr> <td>/ɲ/</td> <td>ny</td> </tr>
-                        <tr> <td>/ŋ/</td> <td>ng</td> </tr>
-                        <tr> <td>/c/</td> <td>ky</td> </tr>
-                        <tr> <td>/ɟ/</td> <td>gy</td> </tr>
-                        <tr> <td>/ç/</td> <td>hy</td> </tr>
-                        <tr> <td>/ʝ/</td> <td>zy</td> </tr>
-                        <tr> <td>/j/</td> <td>y</td> </tr>
-                        <tr> <td>/ʎ/</td> <td>ly</td> </tr>
-                        <tr> <td>/ɾ/</td> <td>r</td> </tr>
+                        <tr> <th>Phoneme</th> <th>Written</th> </tr>
+                        <tr> <td>/ɲ/</td>     <td>nj</td>      </tr>
+                        <tr> <td>/ŋ/</td>     <td>ng</td>      </tr>
+                        <tr> <td>/c/</td>     <td>kj</td>      </tr>
+                        <tr> <td>/ɟ/</td>     <td>gj</td>      </tr>
+                        <tr> <td>/ç/</td>     <td>xj</td>      </tr>
+                        <tr> <td>/ʝ/</td>     <td>qj</td>      </tr>
+                        <tr> <td>/ɣ/</td>     <td>q</td>       </tr>
+                        <tr> <td>/ʎ/</td>     <td>lj</td>      </tr>
+                        <tr> <td>/ɾ/</td>     <td>r</td>       </tr>
                     </table>
+                <h2 class="linkhead">Grammar</h3>
+
+                <h3 class="linkhead">Overview</h3>
+                    <p>
+                        [no name] is an agglutinative language with grammatical cases, cpostpositions, verb-final word order and [todo].
+                    </p>
+                <h3 class="linkhead">Pronouns</h3>
+                    
+                <h3 class="linkhead">Nouns</h3>
+                    <p>
+                        Nouns are formed on the base forms of words, without any affixes. There are 6 cases, which are as follows:
+                    </p>
+                    <table>
+                        <tr> <th>Case</th>            <th>Ending</th>  </tr>
+                        <tr> <td>Nominative</td>      <td>&empty;</td> </tr>
+                        <tr> <td>Accusative</td>      <td>-á</td>      </tr>
+                        <tr> <td>Dative</td>          <td>-akj</td>    </tr>
+                        <tr> <td>Genitive</td>        <td>-im</td>     </tr>
+                        <tr> <td>Locative</td>        <td>-nu</td>     </tr>
+                        <tr> <td>Instrumentative</td> <td>-es</td>     </tr>
+                    </table>
+
+
                 </p>
-                <p>
-                    In the romanization system, each syllable is divided by a space.
-                </p>
-                <h3 class="linkhead">Logography</h3>
-                <p>
-                    Logograms also mostly represent individual words, but some morphemes that inflect verbs/adjectives
-                    will have two readings based on the vowel groups. Their default reading is the low one.
-                </p>
-                <p>
-                    <b>Styling:</b> The characters are organized in square blocks.
-                    They consist entirely of straight (parallel to the X or Y axis) lines and diagonal lines, and compound
-                    lines. The order in which they are written does not really matter.
-                </p>
-                <p>
-                    <b>Forming characters:</b> The characters can be formed in one of three ways:
-                    <ul>
-                        <li><b>Pictographic: </b> A picture or a representation of the idea.</li>
-                        <li><b>Ideographic: </b> Pictures joined together to form another idea.</li>
-                        <li><b>Phonetic: </b> A semantic component, giving an idea of meaning, and a phonetic component, with a similar sound.</li>
-                    </ul>
-                </p>
-                <h3 class="linkhead">Alphabet</h3>
-                <p>
-                    Some of the simpler or simplified logograms are used also as an alphabet, to write loanwords and such
-                    phonetically, written with a line under.
-                </p>
-                <h3 class="linkhead">Font</h3>
-                <p>
-                    Stored alphabetically in Supplermentary Private Use Area-A, logograms first and the alphabet next,
-                    in alphabetical order.
-                </p>
-                <h2 class="linkhead">Other Tools</h2>
-                <button onclick="randomWord()">Random Word Generator</button> <span id="randomout"></span>
-                <hr>
-                <p>
+                    <hr>
                     <div id="footer">
-                        &copy; Vrabbers 2020<br>
+                        &copy; Vrabbers 2021<br>
                         Thanks to Astro for the CSS.
                     </div>
                 </p>
                 <script>
                     autoToc();
-                    function randomWord() {
-                        let start = ["m", "n", "ny", "ng", "p", "b", "t", "d", "hy", "zy", "k", "g", "ts", "dz", "f", "v",
-                                    "s", "z", "ky", "gy", "h", "y", "w", "l", "ly", "r", "", "", "", ""];
-                        let vowels = ["a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú"];
-                        let end = ["m", "n", "ny", "ng", "p", "t", "ky", "k", "y", "w", "l", "ly", "r", "", "", "", ""]
-                        let word = start[Math.floor(Math.random() * start.length)] +
-                                   vowels[Math.floor(Math.random() * vowels.length)] +
-                                   end[Math.floor(Math.random() * end.length)];
-                        document.getElementById("randomout").innerText = word;
-                    }
                 </script>
             </div>
         </div>
