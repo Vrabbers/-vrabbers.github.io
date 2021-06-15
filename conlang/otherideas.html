@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <link rel="icon" type="image/svg" href="./icon.svg">
+            <title>[no name]</title>
+            <link rel="stylesheet" href="conlang.css">
+            <script src="../assets/utilities.js"></script>
+            <script src="conlang.js"></script>
+        </head>
+
+    <body>
+        <div id="main">
+            <div id="pagehead">
+                <span>[no name]</span>
+                <div class="link">
+                    <a href="conlang.html">Main</a>⬩<a href="dictionary.html">Dictionary</a>
+                </div>
+            </div>
+            <div id="page">    
+                <h2>alternative consonant ortho</h2>
+                <table>
+                    <tr> <th></th>           <th>Labial</th>     <th>Dental</th>     <th>Palatal</th>    <th>Velar</th>          <th>Glottal</th> </tr>
+                    <tr> <th>Nasal</th>      <td>Mm</td>         <td>Nn</td>         <td>Ňň</td>         <td>Ńń</td>             <td> </td>       </tr>
+                    <tr> <th>Plosives</th>   <td>Pp&emsp;Bb</td> <td>Tt&emsp;Dd</td> <td>Ǩǩ&emsp;Ǧǧ</td> <td>Kk&emsp;Gg</td>     <td> </td>       </tr>
+                    <tr> <th>Fricatives</th> <td>Ff&emsp;Vv</td> <td>Ss&emsp;Zz</td> <td>X̌x̌&emsp;Ǥ̌ǥ̌</td> <td>Xx&emsp;Ǥǥ</td>     <td>Hh</td>       </tr>
+                    <tr> <th>Approx.</th>    <td>Ww</td>         <td> </td>          <td>Jj</td>         <td></td>               <td> </td>       </tr>
+                    <tr> <th>Lat. App.</th>  <td> </td>          <td>Ll</td>         <td>Ľľ</td>         <td> </td>              <td> </td>       </tr>
+                    <tr> <th>Tap</th>        <td> </td>          <td>Rr</td>         <td> </td>          <td> </td>              <td> </td>       </tr>
+                </table>
+                <textarea id="ta" rows="6" style="width: 100%; font:inherit;"></textarea>
+                ^◌ becomes ◌̌, '◌ becomes ◌́, Qq becomes Ǥǥ.
+                <script>   
+                    let ta = document.getElementById("ta")           
+                    document.getElementById('ta').addEventListener('input', e => {
+                        ta.value = ta.value.replace('q', 'ǥ')
+                        .replace('Q', 'Ǥ')
+                        .replace(/\^(n|k|g|x|ǥ|l)/i, "$1\u030C")
+                        .replace(/\'(a|e|i|o|u|n)/i, "")
+                        .normalize();
+                    });     
+                </script>  
+                </div>
+            <div id="footer">
+                <hr>
+                <p>
+                    &copy; Vrabbers 2021<br>
+                    Thanks to Astro for the CSS.
+            </div>
+        </p>
+        </div>
+    </body>
+    <script>
+        autoVh();
+    </script>
+</html>
