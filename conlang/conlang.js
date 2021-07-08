@@ -66,7 +66,6 @@ function buildDict(dict) {
             def.append(li)
         }
 
-        
         def.className = "def";
 
         entry.append(word, def);

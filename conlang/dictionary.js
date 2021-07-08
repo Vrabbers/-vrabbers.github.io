@@ -1,27 +1,20 @@
 let jsonDict = {
-    "aaaaa": [
-        "aaa"
+    "bes": [
+        "2nd person plural personal pronoun"
     ],
-    "-akj": [
-        "asdasdasd"
+    "ej": [
+        "1st person singular personal pronoun"
     ],
-    "baa": [
-        "aaa"
+    "mi": [
+        "1st person plural personal pronoun"
     ],
-    "ge-": [
-        "asdasdasd"
+    "sj\u00e9": [
+        "3rd person singular personal pronoun"
     ],
-    "ge": [
-        "dasdasdasd",
-        "asdasdasda"
+    "v\u00f3nj": [
+        "3rd person plural personal pronoun"
     ],
-    "laaa": [
-        "baaa"
-    ],
-    "-nu": [
-        "aaaaa"
-    ],
-    "zaaa": [
-        "aaa"
+    "zo": [
+        "2nd person singular personal pronoun"
     ]
 }

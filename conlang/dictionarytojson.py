@@ -3,7 +3,7 @@ import json
 
 pattern = re.compile(r"(.+)\n((?:.+\n)+)(?:\n|$)")
 
-with open("dictionary.txt", "r") as r:
+with open("dictionary.txt", "r", encoding = "utf-8") as r:
     file_data = r.read()    
 
 dictionary = { match.group(1).strip(): match.group(2).strip() for match in pattern.finditer(file_data) }
