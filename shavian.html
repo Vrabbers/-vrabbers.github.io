@@ -1,17 +1,13 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <script src="assets/utilities.js"></script>
     <script src="assets/jquery-3.4.1.min.js"></script>
     <title>Vrabbers</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="assets/shawstrings.json"></script>
     <script src="assets/shavian.js"></script>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body class="container-flex text-center  bg-white h-100 pb-10">
 
@@ -38,7 +34,7 @@
         </div>
     </div>
 </nav>
-<!--<div class="container">
+<--<div class="container">
     <div class="row">
         <div class="col">
             <h2>Learn&nbsp;Shavian</h2>
@@ -60,7 +56,7 @@
             <img src="assets/shawcheatsheet.png" height="300" alt="">
         </div>
     </div>
-</div>-->
+</div>->
 <div class = "container">
     <div class = "row">
         <div class="col">
@@ -84,4 +80,76 @@
 </body>
 
 
+</html>
+-->
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <link rel="icon" type="image/png" href="assets/favicon.ico">
+            <title>Vrabbers</title>
+            <link rel="stylesheet" href="assets/style.css">
+            <script src="assets/utilities.js"></script>
+            <script src="assets/jquery-3.4.1.min.js"></script>
+            <script src="assets/shawstrings.json"></script>
+            <script src="assets/shavian.js"></script>
+            <style>
+                .inputcontainer {
+                    display: flex;
+                    margin-bottom: 0.5em;
+                }
+
+                .inputcontainer input {
+                    font-size:1em;
+                    margin-inline-end: 0.5em;
+                }
+
+                input {
+                    font-size: 1em;
+                    border: 1px;
+                    border-color: var(--color);
+                    border-style: solid;
+                    padding: 0.2em 0.4em;
+                    box-shadow: 0 0 0.5em var(--color);
+                    border-radius: 1.5px;
+                }
+
+                #outbox {
+                    font-size: 1em;
+                    border: 1px;
+                    border-color: var(--color);
+                    border-style: solid;
+                    padding: 0.2em 0.4em;
+                    box-shadow: 0 0 0.5em var(--color);
+                    border-radius: 1.5px;
+                    min-height: 2ex;
+                }
+            </style>
+        </head>
+
+    <body>
+        <div id="main">
+            <div id="pagehead">
+                <img src="assets/turt.png" style="height: 65px;" alt=""><span>Vrabbers</span>
+            </div>
+            <div id = "page">
+                <h2>Shavian-IPA Translator</h2> 
+        <div class="inputcontainer">
+            <input style="width:100%" type="text" placeholder="𐑑𐑧𐑒𐑕𐑑 𐑦𐑯 𐑖𐑱𐑝𐑾𐑯" aria-label="Text in Shavian" id="inputbox">
+            <button onclick="translateButton()" id="gobutton">Translate</button>
+        </div>
+        <div id="outbox" class="alert alert-dark p-2"></div>
+            </div>
+            <div id="footer">
+                <hr>
+                <p>
+                        &copy; Vrabbers 2021<br>
+                        Shavian-English strings by Alexolas<br>
+                        Thanks to Astro for the CSS.
+                    </div>
+                </p>
+            </div>
+            <script>autoVh()</script>
+        </div>
+    </body>
 </html>
