@@ -1,15 +1,15 @@
 @font-face {
     font-family: noto;
-    src: url("NotoSerif-Regular.ttf");
+    src: url("NotoSans-Regular.ttf");
 }
 
 * {
-    font-family: noto, serif;
+    font-family: noto, sans-serif;
 }
 :root {
     --white: #f7f7f7;
     --black: #100303;
-    --color: #95389e;
+    --color: #0d7000;
 }
 
 a { 
@@ -17,43 +17,25 @@ a {
 }
 
 h1 {
+    counter-reset: h2;
     font-weight: normal;
     margin-top: 0;
     font-size: 1.75em;
 }
 
 h2 {
-    font-weight: normal;
-    margin: 0.5em 0 0.5em;
-}
-
-h3 {
-    font-weight: normal;
-    margin: 0.5em 0 0.5em;
-}
-
-h1 {
-    counter-reset: h2;
-}
-
-h2.linkhead::before {
-    counter-increment: h2; content: counter(h2) ". ";
-}
-
-h2.linkhead {
     counter-reset: h3;
+    font-weight: normal;
+    margin: 0 0 0.5em;
 }
 
-h3.linkhead::before {
-    counter-increment: h3; content: counter(h2) "." counter(h3) " ";
-}
 
 p {
     margin: 0.5em 0 0.5em;
 }
 
 body {
-    font-size: 14pt;
+    font-size: 20px;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -63,7 +45,7 @@ body {
 #main {
     background-color: var(--white);
     color: var(--black);
-    width: 60em;
+    width: 50em;
     min-width: min-content;
     max-width: 100%;
     text-align: justify;
@@ -75,7 +57,7 @@ body {
 
 #pagehead {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: var(--color);
     color: var(--white);
@@ -86,13 +68,8 @@ body {
 }
 
 #pagehead span {
+    margin-inline-start: 1rem;
     font-size: 2em;
-}
-
-#pagehead .link a {
-    color: var(--white);
-    padding: 0 10px 0 10px;
-    text-decoration: none;
 }
 
 #page {
@@ -146,26 +123,32 @@ b {
     color: var(--color);
 }
 
-#toc ol { 
+ol { 
     counter-reset: item 
 }
 
-#toc ol > li { 
+ol > li { 
     display: block 
 }
 
-#toc ol > li::before { 
+ol > li::before { 
     content: counters(item, ".") ". "; 
     counter-increment: item; 
 }
 
-#toc li ol > li::before {
+li ol > li::before {
     content: counters(item, ".") " "; 
+}
+
+
+li {
+    font-size: 1em;
 }
 
 hr {
     color: var(--color);
-    margin: 1em 0 0 0
+    margin: 1em 0 0.75em 0;
+    border-bottom: 1px; 
 }
 
 #footer {
@@ -196,6 +179,60 @@ button:active {
     filter: brightness(80%) contrast(120%);
 }
 
+.infolink {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25rem;
+    background-color: var(--color);
+    color: var(--white);
+    border: none;
+    padding: 0.2em 0.4em;
+    box-shadow: 0 0 0.5em var(--color);
+    border-radius: 1.5px;
+    transition: filter 0.1s;
+    margin: 0 0 0.8em 0;
+}
+
+.infolink .moreinfo {
+    margin-top: 0em;
+    margin-bottom: 0.2em;
+    font-size: 1rem;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    
+}
+
+.infolink:hover > .moreinfo {
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+@media (prefers-reduced-motion) {
+    .infolink .moreinfo {
+        height: auto;
+        overflow: hidden;
+        opacity: 1;
+    }
+    
+}
+
+.infolink:active {
+    filter: brightness(80%) contrast(120%); 
+}
+
+.moreinfo {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.moreinfo img {
+    height: auto;   
+    object-fit: contain;
+}
+
 ::selection {
     color: var(--white);
     background: var(--color);
@@ -216,32 +253,5 @@ button:active {
 sub, sup {
     font-size: 0.7em;
 }
-
-#error {
-    color: var(--color);
-}
-
-.entry {
-    margin-bottom: 1em;
-}
-
-.word {
-    font-size: 1.2em;
-    color: var(--color);
-}
-
-.def {
-    margin-top: 0;
-}
-
-.def {
-    padding-left: 1.5em;
-}
-
-.def li::marker {
-    color: var(--color);
-    font-size: 0.7em;
-}
-
 
 /* thanks astro for this css :) */
